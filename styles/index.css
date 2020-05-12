@@ -1,0 +1,52 @@
+@tailwind base;
+
+/* Write your own custom base styles here */
+body {
+  @apply font-serif bg-cover;
+  background-image: url("/assets/background.jpg");
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-sans;
+}
+
+code {
+  @apply font-mono;
+}
+
+h1 {
+  @apply my-2 text-3xl;
+}
+
+h2 {
+  @apply my-1 text-2xl;
+}
+
+h3 {
+  @apply my-1 text-xl;
+}
+
+p {
+  @apply my-3;
+}
+
+a {
+  @apply text-blue-500;
+}
+
+a:hover {
+  @apply text-blue-700;
+}
+
+/* Start purging... */
+@tailwind components;
+/* Stop purging. */
+
+/* Write you own custom component styles here */
+
+/* Start purging... */
+@tailwind utilities;
+/* Stop purging. */
+
+/* Your own custom utilities */
+
