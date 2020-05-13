@@ -12,7 +12,7 @@ const postsDirectory = join(process.cwd(), "_posts");
 
 export const getPostSlugs = (): string[] => fs.readdirSync(postsDirectory);
 
-export const getPostBySlug = (slug: string): Post => {
+export const getPostBySlug = (slug: string, includeContent = true): Post => {
   const realSlug = slug.replace(/\.md$/, "");
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -21,11 +21,11 @@ export const getPostBySlug = (slug: string): Post => {
   return {
     ...(data as MatterData),
     slug: realSlug,
-    content,
+    content: includeContent ? content : "",
   };
 };
 
 export const getAllPosts = (): Post[] => {
   const slugs = getPostSlugs();
-  return slugs.map((slug) => getPostBySlug(slug));
+  return slugs.map((slug) => getPostBySlug(slug, false));
 };
