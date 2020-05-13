@@ -9,12 +9,12 @@ type Props = {
   allPosts: Post[];
 };
 
-const Blog = ({ allPosts }: Props) => {
+const Blog = ({ allPosts }: Props): React.ReactElement => {
   return (
     <div>
       {allPosts.map((p) => (
-        <div>
-          <Link key={p.slug} href={`/blog/${p.slug}`}>
+        <div key={p.slug}>
+          <Link href={`/blog/${p.slug}`}>
             <a className="flex">
               <div className="flex-1">{p.title}</div>
               <DateFormatter dateString={p.date} />

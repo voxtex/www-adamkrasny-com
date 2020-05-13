@@ -1,6 +1,6 @@
 import React from "react";
 
-const Career = () => {
+const Career = (): React.ReactElement => {
   return (
     <div>
       <h2>Netflix</h2>

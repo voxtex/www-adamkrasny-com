@@ -1,6 +1,6 @@
 import React from "react";
 
-const Index = () => (
+const Index = (): React.ReactElement => (
   <div>
     <h1>Welcome</h1>
     <p>This is my site, a catalog of my experience and experiments.</p>

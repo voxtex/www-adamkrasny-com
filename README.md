@@ -1,1 +1,1 @@
-www.adamkrasny.com
+www.adamkrasny.com;
