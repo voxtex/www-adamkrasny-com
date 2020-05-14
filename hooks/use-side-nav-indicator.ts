@@ -18,11 +18,11 @@ const useSideNavIndicator = () => {
   const { pathname } = useRouter();
   const firstPathPart = "/" + pathname.split("/")[1];
 
-  const elementsByHref = useRef<{ [key: string]: HTMLAnchorElement }>({});
+  const elementsByHrefRef = useRef<{ [key: string]: HTMLAnchorElement }>({});
   const [indicatedElement, setIndicatedElement] = useState<HTMLElement>();
 
   const resetIndicator = useCallback(() => {
-    const defaultIndicatedElement = Object.entries(elementsByHref.current).find(
+    const defaultIndicatedElement = Object.entries(elementsByHrefRef.current).find(
       ([href]) => firstPathPart === href,
     )?.[1];
 
@@ -64,8 +64,8 @@ const useSideNavIndicator = () => {
       }
 
       const elementKey = getElementKey(el);
-      const oldElement = elementsByHref.current[elementKey];
-      elementsByHref.current[elementKey] = el;
+      const oldElement = elementsByHrefRef.current[elementKey];
+      elementsByHrefRef.current[elementKey] = el;
 
       if (!oldElement && firstPathPart === elementKey) {
         resetIndicator();

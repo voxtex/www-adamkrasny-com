@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import "prismjs/themes/prism-tomorrow.css";
 import React from "react";
+import Rolodex from "../components/rolodex";
 import SideNavIndicator from "../components/side-nav-indicator";
 import SideNavLink from "../components/side-nav-link";
 import SocialButton, { SocialButtonType } from "../components/social-button";
@@ -9,6 +10,7 @@ import useSideNavIndicator from "../hooks/use-side-nav-indicator";
 import "../styles/index.css";
 
 const SOCIAL_BUTTONS: SocialButtonType[] = ["stackoverflow", "linkedin", "github", "email"];
+const ROLODEX_ITEMS = ["Software Engineer", "Technical Support", "Bicyclist", "Sometimes Napping", "Always Hungry"];
 
 type Props = {
   Component: React.ComponentType;
@@ -36,7 +38,10 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
             <h1 className="text-5xl">Adam Krasny</h1>
           </a>
         </Link>
-        <h2 className="text-xl mt-2">Software Engineer in San Jose, CA</h2>
+        <h2 className="text-xl mt-2 flex">
+          <Rolodex items={ROLODEX_ITEMS} className="pr-2" />
+          <div> in San Jose, CA</div>
+        </h2>
         <ul className="nav-links list-none mt-16 font-sans">
           <SideNavLink
             href="/career"
@@ -81,9 +86,10 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
           .root {
             min-height: 100vh;
             display: grid;
-            grid-template-columns: 420px 30px minmax(min-content, 840px) 1fr;
-            grid-template-rows: 1fr auto;
-            grid-template-areas: "side-nav side-nav-toggle content ." "social-buttons side-nav-toggle content .";
+            grid:
+              "side-nav side-nav-toggle content ." 1fr
+              "social-buttons side-nav-toggle content ." auto
+              / 420px 30px minmax(min-content, 840px) 1fr;
           }
 
           nav {

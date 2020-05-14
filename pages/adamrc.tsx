@@ -69,6 +69,38 @@ const AdamRC = ({}: Props): React.ReactElement => {
           - Offline documentation available at the press of a button.
         </li>
       </ul>
+      <br />
+      <p>
+        This website is built using{" "}
+        <a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer">
+          Next.js
+        </a>{" "}
+        and{" "}
+        <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">
+          React
+        </a>{" "}
+        to generate fully static HTML.{" "}
+        <a href="https://github.com/zeit/styled-jsx" target="_blank" rel="noopener noreferrer">
+          styled-jsx
+        </a>{" "}
+        and{" "}
+        <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">
+          tailwindcss
+        </a>{" "}
+        for styling.{" "}
+        <a href="https://github.com/remarkjs/remark" target="_blank" rel="noopener noreferrer">
+          remark
+        </a>
+        ,{" "}
+        <a href="https://github.com/rehypejs/rehype" target="_blank" rel="noopener noreferrer">
+          rehype
+        </a>
+        , and{" "}
+        <a href="https://github.com/PrismJS/prism" target="_blank" rel="noopener noreferrer">
+          Prism
+        </a>{" "}
+        to render the blog posts.
+      </p>
     </div>
   );
 };

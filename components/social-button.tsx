@@ -32,8 +32,8 @@ const SocialButton = ({ className, type, size = 50 }: Props): React.ReactElement
       className={clsx("social-button p-1 inline-flex justify-center cursor-pointer", className)}
       href={icon.href}
       target="_blank"
-      rel="noopener noreferrer"
       style={{ minWidth: size, height: size }}
+      rel="noopener noreferrer"
     >
       <img src={icon.src} alt={icon.alt} />
 

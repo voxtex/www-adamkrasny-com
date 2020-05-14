@@ -7,7 +7,7 @@ const Career = (): React.ReactElement => {
       <h3>Senior Software Engineer</h3>
       <p>
         At Netflix, the well known video streaming service, my first role placed me on the customer service engineering
-        team. On this team I found myself working on the entire customer service platform which included VoIP, chat,
+        team. On this team I found myself working on the entire customer service platform which encompassed VoIP, chat,
         CRM, CMS, and help center applications. The nature of customer service led me to build distributed applications
         handling large amounts of traffic with high availability.
       </p>
