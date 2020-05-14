@@ -17,7 +17,7 @@ const Blog = ({ allPosts }: Props): React.ReactElement => {
         <div key={p.slug} className="mt-2">
           <Link href="/blog/[slug]" as={`/blog/${p.slug}`}>
             <a className="flex">
-              <div className="flex-1">{p.title}</div>
+              <div className="flex-1 pr-2">{p.title}</div>
               <DateFormatter dateString={p.date} />
             </a>
           </Link>
