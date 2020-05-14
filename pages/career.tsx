@@ -3,7 +3,7 @@ import React from "react";
 const Career = (): React.ReactElement => {
   return (
     <div>
-      <h2>Netflix</h2>
+      <h2 className="mt-0">Netflix</h2>
       <h3>Senior Software Engineer</h3>
       <p>
         At Netflix, the well known video streaming service, my first role placed me on the customer service engineering

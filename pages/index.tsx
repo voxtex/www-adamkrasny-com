@@ -2,7 +2,7 @@ import React from "react";
 
 const Index = (): React.ReactElement => (
   <div>
-    <h1>Welcome</h1>
+    <h1 className="mt-0">Welcome</h1>
     <p>This is my site, a catalog of my experience and experiments.</p>
     <p>
       I&apos;m a web, desktop, and mobile developer with over 10 years of software engineering experience. My current

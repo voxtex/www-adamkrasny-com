@@ -5,7 +5,7 @@ type Props = {};
 const AdamRC = ({}: Props): React.ReactElement => {
   return (
     <div>
-      <p>Some of my development environment configurations and recommended productivity tools.</p>
+      <p className="mt-0">Some of my development environment configurations and recommended productivity tools.</p>
       <ul>
         <li>
           <a href="https://github.com/be5invis/iosevka" target="_blank" rel="noopener noreferrer">

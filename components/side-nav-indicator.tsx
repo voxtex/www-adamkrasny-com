@@ -19,7 +19,7 @@ const SideNavIndicator = ({
   }
 
   return (
-    <div className={clsx(className)}>
+    <div className={clsx("root", className)}>
       <div
         className={clsx("indicator w-full", indicatorClassName)}
         style={{ height, transform: `translateY(${y}px)` }}
@@ -27,6 +27,10 @@ const SideNavIndicator = ({
 
       <style jsx>
         {`
+          .root {
+            height: 100%;
+          }
+
           .indicator {
             height: 1px;
             transition: background-color 1s cubic-bezier(0.19, 1, 0.22, 1), transform 1s cubic-bezier(0.19, 1, 0.22, 1),

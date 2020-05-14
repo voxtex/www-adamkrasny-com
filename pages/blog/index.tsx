@@ -12,6 +12,7 @@ type Props = {
 const Blog = ({ allPosts }: Props): React.ReactElement => {
   return (
     <div>
+      <p className="mt-0">A series of older blog posts that I ported over from another platform.</p>
       {allPosts.map((p) => (
         <div key={p.slug}>
           <Link href={`/blog/${p.slug}`}>
