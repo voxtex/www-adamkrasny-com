@@ -15,7 +15,7 @@ const Blog = ({ allPosts }: Props): React.ReactElement => {
       <p className="mt-0">A series of older blog posts ported over from an old platform.</p>
       {allPosts.map((p) => (
         <div key={p.slug} className="mt-2">
-          <Link href={`/blog/${p.slug}`}>
+          <Link href="/blog/[slug]" as={`/blog/${p.slug}`}>
             <a className="flex">
               <div className="flex-1">{p.title}</div>
               <DateFormatter dateString={p.date} />
