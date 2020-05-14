@@ -26,7 +26,7 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta charSet="utf-8" />
       </Head>
-      <nav className="bg-black bg-opacity-50 px-6 text-white text-center pb-0 md:text-left">
+      <nav className="bg-black bg-opacity-50 px-4 text-white text-center pb-0 md:text-left md:px-6">
         <Link href="/">
           <a
             className="inline-block px-4 mt-6 text-white hover:text-white hover:text-opacity-75 md:block md:px-0"
@@ -73,7 +73,7 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
       </nav>
       <div
         id="contact-buttons"
-        className="contact-buttons bg-black bg-opacity-50 flex items-center p-2 border-t px-6"
+        className="contact-buttons bg-black bg-opacity-50 flex justify-end items-center p-2 border-t px-4 md:px-6 md:justify-start"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
@@ -86,7 +86,7 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
         <SideNavIndicator className="hidden md:block" {...indicatorProps} />
         <SideNavIndicator className="md:hidden" horizontal {...indicatorProps} />
       </div>
-      <main className="bg-white py-10 px-8">
+      <main className="bg-white py-5 px-4 md:px-8 md:py-10">
         <Component {...pageProps} />
       </main>
 
