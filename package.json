@@ -58,10 +58,10 @@
   "scripts": {
     "build": "next build",
     "clean": "rimraf .next out",
-    "deploy": "run-s build export no-jekyll gh-pages",
+    "deploy": "run-s clean build export no-jekyll gh-pages",
     "dev": "next",
     "export": "next export",
-    "gh-pages": "gh-pages -d out",
+    "gh-pages": "gh-pages -t -d out",
     "lint": "eslint --fix \"**/*.{js,json,ts,tsx}\"",
     "no-jekyll": "touch out/.nojekyll",
     "nuke": "rimraf .next out node_modules",
