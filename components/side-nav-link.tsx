@@ -13,7 +13,7 @@ const SideNavLink = React.forwardRef<HTMLAnchorElement, Props>(
     <>
       <Link href={href}>
         <a
-          className="text-xl block hover:cursor-pointer py-2 text-white hover:text-white hover:text-opacity-75"
+          className="text-xl block hover:cursor-pointer px-4 py-2 text-white hover:text-white hover:text-opacity-75 md:px-0"
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
           ref={ref}

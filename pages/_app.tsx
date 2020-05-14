@@ -9,7 +9,7 @@ import SocialButton from "../components/social-button";
 import useSideNavIndicator from "../hooks/use-side-nav-indicator";
 import "../styles/index.css";
 
-const ROLODEX_ITEMS = ["Software Engineer", "Technical Support", "Bicyclist", "Sometimes Napping", "Always Hungry"];
+const ROLODEX_ITEMS = ["Software Engineer", "Technical support", "Bicyclist", "Enjoys napping", "Always hungry"];
 
 type Props = {
   Component: React.ComponentType;
@@ -26,10 +26,10 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta charSet="utf-8" />
       </Head>
-      <nav className="bg-black bg-opacity-50 px-6 text-white text-center pb-3 md:pb-0 md:text-left">
+      <nav className="bg-black bg-opacity-50 px-6 text-white text-center pb-0 md:text-left">
         <Link href="/">
           <a
-            className="block mt-6 text-white hover:text-white hover:text-opacity-75"
+            className="inline-block px-4 mt-6 text-white hover:text-white hover:text-opacity-75 md:block md:px-0"
             ref={registerAnchorElement}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -38,7 +38,7 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
           </a>
         </Link>
         <h2 className="text-xl mt-2 flex flex-wrap justify-center md:justify-start">
-          <Rolodex items={ROLODEX_ITEMS} className="pr-2" />
+          <Rolodex items={ROLODEX_ITEMS} className="pr-2 text-right" />
           <div> in San Jose, CA</div>
         </h2>
         <ul className="nav-links list-none font-sans flex justify-around mt-4 md:mt-16 md:block">
@@ -82,8 +82,9 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
         <SocialButton type="github" className="mr-4" />
         <SocialButton type="email" />
       </div>
-      <div className="hidden md:block">
-        <SideNavIndicator className="side-nav-indicator w-full" {...indicatorProps} />
+      <div>
+        <SideNavIndicator className="hidden md:block" {...indicatorProps} />
+        <SideNavIndicator className="md:hidden" horizontal {...indicatorProps} />
       </div>
       <main className="bg-white py-10 px-8">
         <Component {...pageProps} />
@@ -96,6 +97,7 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
             display: grid;
             grid:
               "side-nav" auto
+              "side-nav-indicator" 30px
               "content" 1fr
               "social-buttons" auto;
           }
@@ -110,7 +112,7 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
           }
 
           .side-nav-indicator-holder {
-            grid-area: side-nav-toggle;
+            grid-area: side-nav-indicator;
           }
 
           .social-buttons {
@@ -126,8 +128,8 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
           @media (min-width: 768px) {
             .root {
               grid:
-                "side-nav side-nav-toggle content" 1fr
-                "social-buttons side-nav-toggle content" auto
+                "side-nav side-nav-indicator content" 1fr
+                "social-buttons side-nav-indicator content" auto
                 / 340px 30px 1fr;
             }
 
@@ -139,8 +141,8 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
           @media (min-width: 1024px) {
             .root {
               grid:
-                "side-nav side-nav-toggle content" 1fr
-                "social-buttons side-nav-toggle content" auto
+                "side-nav side-nav-indicator content" 1fr
+                "social-buttons side-nav-indicator content" auto
                 / 420px 30px minmax(min-content, 840px);
             }
           }

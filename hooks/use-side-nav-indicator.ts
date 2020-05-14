@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 const INDICATOR_CLASS_NAMES_BY_KEY: { [key: string]: string } = {
   "/": "bg-red-600",
@@ -14,7 +14,14 @@ const getElementKey = (el: HTMLElement): string => {
   return el.getAttribute("href") ?? el.getAttribute("id") ?? "default";
 };
 
-const useSideNavIndicator = () => {
+type UseSideNavIndicatorResult = {
+  handleMouseEnter: (e: React.MouseEvent<HTMLAnchorElement | HTMLElement>) => void;
+  handleMouseLeave: () => void;
+  indicatorProps: null | { width: number; x: number; y: number; indicatorClassName: string; height: number };
+  registerAnchorElement: (el: HTMLAnchorElement) => void;
+};
+
+const useSideNavIndicator = (): UseSideNavIndicatorResult => {
   const { pathname } = useRouter();
   const firstPathPart = "/" + pathname.split("/")[1];
 
@@ -53,6 +60,8 @@ const useSideNavIndicator = () => {
     return {
       height: boundingClientRect.height,
       indicatorClassName,
+      width: boundingClientRect.width,
+      x: boundingClientRect.x,
       y: boundingClientRect.y + window.pageYOffset,
     };
   }, [indicatedElement]);

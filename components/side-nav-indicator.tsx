@@ -3,15 +3,21 @@ import React from "react";
 
 type Props = {
   className?: string;
-  indicatorClassName?: string;
   height?: number;
+  horizontal?: boolean;
+  indicatorClassName?: string;
+  width?: number;
+  x?: number;
   y?: number;
 };
 
 const SideNavIndicator = ({
   className,
   height = 48,
+  horizontal,
   indicatorClassName = "bg-white",
+  width = 48,
+  x,
   y,
 }: Props): React.ReactElement | null => {
   if (y === undefined) {
@@ -19,22 +25,21 @@ const SideNavIndicator = ({
   }
 
   return (
-    <div className={clsx("root", className)}>
+    <div className={clsx("h-full", className)}>
       <div
-        className={clsx("indicator w-full", indicatorClassName)}
-        style={{ height, transform: `translateY(${y}px)` }}
+        className={clsx("indicator", indicatorClassName)}
+        style={{
+          height: horizontal ? "100%" : height,
+          width: horizontal ? width : "100%",
+          transform: horizontal ? `translateX(${x}px)` : `translateY(${y}px)`,
+        }}
       />
 
       <style jsx>
         {`
-          .root {
-            height: 100%;
-          }
-
           .indicator {
-            height: 1px;
             transition: background-color 1s cubic-bezier(0.19, 1, 0.22, 1), transform 1s cubic-bezier(0.19, 1, 0.22, 1),
-              height 1s cubic-bezier(0.19, 1, 0.22, 1);
+              height 1s cubic-bezier(0.19, 1, 0.22, 1), width 1s cubic-bezier(0.19, 1, 0.22, 1);
           }
         `}
       </style>
