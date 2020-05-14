@@ -72,8 +72,8 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
         </ul>
       </nav>
       <div
-        id="social-buttons"
-        className="social-buttons bg-black bg-opacity-50 flex items-center p-2 border-t px-6"
+        id="contact-buttons"
+        className="contact-buttons bg-black bg-opacity-50 flex items-center p-2 border-t px-6"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
@@ -99,7 +99,8 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
               "side-nav" auto
               "side-nav-indicator" 30px
               "content" 1fr
-              "social-buttons" auto;
+              "contact-buttons" auto
+              / minmax(0, 1fr);
           }
 
           nav {
@@ -115,9 +116,9 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
             grid-area: side-nav-indicator;
           }
 
-          .social-buttons {
+          .contact-buttons {
             backdrop-filter: blur(5px);
-            grid-area: social-buttons;
+            grid-area: contact-buttons;
             border-top-color: rgba(255, 255, 255, 0.05);
           }
 
@@ -129,8 +130,8 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
             .root {
               grid:
                 "side-nav side-nav-indicator content" 1fr
-                "social-buttons side-nav-indicator content" auto
-                / 340px 30px 1fr;
+                "contact-buttons side-nav-indicator content" auto
+                / 340px 30px minmax(0, 1fr);
             }
 
             .nav-links li:hover {
@@ -142,8 +143,8 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
             .root {
               grid:
                 "side-nav side-nav-indicator content" 1fr
-                "social-buttons side-nav-indicator content" auto
-                / 420px 30px minmax(min-content, 840px);
+                "contact-buttons side-nav-indicator content" auto
+                / 420px 30px minmax(0, 1024px);
             }
           }
         `}

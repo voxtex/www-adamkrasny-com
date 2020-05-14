@@ -6,7 +6,7 @@ const Index = (): React.ReactElement => (
     <p>This is my site, a catalog of my experience and experiments.</p>
     <p>
       I&apos;m a web, desktop, and mobile developer with over 10 years of software engineering experience. My current
-      focus is full-stack JavaScript.
+      focus is full-stack TypeScript and JavaScript.
     </p>
     <a href="http://stackoverflow.com/users/2639178/adamk" target="_blank" rel="noopener noreferrer" className="mr-4">
       Stack Overflow

@@ -6,7 +6,7 @@ const INDICATOR_CLASS_NAMES_BY_KEY: { [key: string]: string } = {
   "/career": "bg-green-600",
   "/blog": "bg-blue-600",
   "/adamrc": "bg-yellow-600",
-  "social-buttons": "bg-purple-600",
+  "contact-buttons": "bg-purple-600",
   default: "bg-white",
 };
 

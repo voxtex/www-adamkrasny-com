@@ -12,9 +12,9 @@ type Props = {
 const Blog = ({ allPosts }: Props): React.ReactElement => {
   return (
     <div>
-      <p className="mt-0">A series of older blog posts that I ported over from another platform.</p>
+      <p className="mt-0">A series of older blog posts ported over from an old platform.</p>
       {allPosts.map((p) => (
-        <div key={p.slug}>
+        <div key={p.slug} className="mt-2">
           <Link href={`/blog/${p.slug}`}>
             <a className="flex">
               <div className="flex-1">{p.title}</div>
