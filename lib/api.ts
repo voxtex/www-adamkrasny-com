@@ -1,3 +1,4 @@
+import { parseISO } from "date-fns";
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
@@ -27,5 +28,7 @@ export const getPostBySlug = (slug: string, includeContent = true): Post => {
 
 export const getAllPosts = (): Post[] => {
   const slugs = getPostSlugs();
-  return slugs.map((slug) => getPostBySlug(slug, false));
+  return slugs
+    .map((slug) => getPostBySlug(slug, false))
+    .sort((a, b) => parseISO(b.date).valueOf() - parseISO(a.date).valueOf());
 };
