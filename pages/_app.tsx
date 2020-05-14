@@ -82,7 +82,7 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
         <ContactButton type="github" className="mr-4" />
         <ContactButton type="email" />
       </div>
-      <div>
+      <div className="side-nav-indicator-holder">
         <SideNavIndicator className="hidden md:block" {...indicatorProps} />
         <SideNavIndicator className="md:hidden" horizontal {...indicatorProps} />
       </div>
