@@ -57,7 +57,7 @@
   "scripts": {
     "build": "next build",
     "clean": "rimraf .next out",
-    "deploy": "run-s clean build export no-jekyll gh-pages",
+    "deploy": "run-s clean build export gh-pages-fixes gh-pages",
     "dev": "next",
     "export": "next export",
     "gh-pages": "gh-pages -t -d out",

@@ -6,7 +6,7 @@ import ContactButton from "../components/contact-button";
 import Rolodex from "../components/rolodex";
 import SideNavIndicator from "../components/side-nav-indicator";
 import SideNavLink from "../components/side-nav-link";
-import useSideNavIndicator from "../hooks/use-side-nav-indicator";
+import useSideNavIndicator from "../components/use-side-nav-indicator";
 import "../styles/index.css";
 
 const ROLODEX_ITEMS = ["Software Engineer", "Technical support", "Bicyclist", "Enjoys napping", "Always hungry"];
