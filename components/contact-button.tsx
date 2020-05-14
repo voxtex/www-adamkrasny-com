@@ -7,7 +7,7 @@ import stackoverflowIcon from "../assets/stackoverflow.svg";
 
 export type SocialButtonType = "stackoverflow" | "linkedin" | "github" | "email";
 
-const SOCIAL_ICONS = {
+const CONTACT_ICONS = {
   stackoverflow: {
     src: stackoverflowIcon,
     alt: "Stack Overflow",
@@ -24,12 +24,12 @@ type Props = {
   size?: number;
 };
 
-const SocialButton = ({ className, type, size = 50 }: Props): React.ReactElement => {
-  const icon = SOCIAL_ICONS[type];
+const ContactButton = ({ className, type, size = 50 }: Props): React.ReactElement => {
+  const icon = CONTACT_ICONS[type];
   return (
     <a
       key={icon.src}
-      className={clsx("social-button p-1 inline-flex justify-center cursor-pointer", className)}
+      className={clsx("contact-button p-1 inline-flex justify-center cursor-pointer", className)}
       href={icon.href}
       target="_blank"
       style={{ minWidth: size, height: size }}
@@ -39,7 +39,7 @@ const SocialButton = ({ className, type, size = 50 }: Props): React.ReactElement
 
       <style jsx>
         {`
-          .social-button {
+          .contact-button {
             min-width: 50px;
             height: 50px;
             background-color: rgba(255, 255, 255, 0.05);
@@ -47,13 +47,13 @@ const SocialButton = ({ className, type, size = 50 }: Props): React.ReactElement
               0.3s background-color cubic-bezier(0.5, 1, 0.89, 1);
           }
 
-          .social-button:hover {
+          .contact-button:hover {
             transform: scale(1.1);
             transform-origin: center;
             background-color: rgba(255, 255, 255, 0.1);
           }
 
-          .social-button img {
+          .contact-button img {
             height: 100%;
             width: auto;
           }
@@ -63,4 +63,4 @@ const SocialButton = ({ className, type, size = 50 }: Props): React.ReactElement
   );
 };
 
-export default SocialButton;
+export default ContactButton;

@@ -2,10 +2,10 @@ import Head from "next/head";
 import Link from "next/link";
 import "prismjs/themes/prism-tomorrow.css";
 import React from "react";
+import ContactButton from "../components/contact-button";
 import Rolodex from "../components/rolodex";
 import SideNavIndicator from "../components/side-nav-indicator";
 import SideNavLink from "../components/side-nav-link";
-import SocialButton from "../components/social-button";
 import useSideNavIndicator from "../hooks/use-side-nav-indicator";
 import "../styles/index.css";
 
@@ -77,10 +77,10 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <SocialButton type="stackoverflow" className="mr-4" />
-        <SocialButton type="linkedin" className="mr-4" />
-        <SocialButton type="github" className="mr-4" />
-        <SocialButton type="email" />
+        <ContactButton type="stackoverflow" className="mr-4" />
+        <ContactButton type="linkedin" className="mr-4" />
+        <ContactButton type="github" className="mr-4" />
+        <ContactButton type="email" />
       </div>
       <div>
         <SideNavIndicator className="hidden md:block" {...indicatorProps} />
