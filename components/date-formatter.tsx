@@ -10,7 +10,7 @@ const DateFormatter = ({ className, dateString }: Props): React.ReactElement => 
   const date = parseISO(dateString);
   return (
     <time dateTime={dateString} className={className}>
-      {format(date, "LLLL	d, yyyy")}
+      {format(date, "PP")}
     </time>
   );
 };
