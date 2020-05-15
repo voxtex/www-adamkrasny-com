@@ -1,6 +1,6 @@
 ---
-title: 'Simplify async code with generators and promises'
-date: '2015-05-13T00:00:00.000Z'
+title: "Simplify async code with generators and promises"
+date: "2015-05-13T00:00:00.000Z"
 ---
 
 # Simplify async code with generators and promises
@@ -15,7 +15,7 @@ Even when using promises, async code can become unwieldy. Take a look at the fol
 
 ```javascript
 getUser(id).then(function (user) {
-  return getCompany(user.companyId).then(function(company) {
+  return getCompany(user.companyId).then(function (company) {
     return getUser(company.ceoId);
   });
 });
@@ -24,7 +24,7 @@ getUser(id).then(function (user) {
 Assume id is already set and that all functions return promises. The code will return the user object for the CEO of the original user’s company. Take a look at that same function using generators and [co](https://github.com/tj/co), a helper library.
 
 ```javascript
-co(function *() {
+co(function* () {
   let user = yield getUser(id);
   let company = yield getCompany(user.companyId);
   return yield getUser(company.ceoId);

@@ -3,7 +3,7 @@
 /* Write your own custom base styles here */
 body {
   @apply font-serif;
-  background-color: #1E1E20;
+  background-color: #1e1e20;
   background-image: url("/assets/background_optimized.jpg");
   background-size: 100%;
 }

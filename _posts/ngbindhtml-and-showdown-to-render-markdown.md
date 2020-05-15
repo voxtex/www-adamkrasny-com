@@ -1,6 +1,6 @@
 ---
-title: 'ngBindHtml and Showdown to render markdown'
-date: '2013-10-25T00:00:00.000Z'
+title: "ngBindHtml and Showdown to render markdown"
+date: "2013-10-25T00:00:00.000Z"
 ---
 
 # ngBindHtml and Showdown to Render Markdown
@@ -18,7 +18,7 @@ Markdown string and process it into an HTML string. We can assign the
 value on our controller since we need to mark it as trusted first.
 
 ```javascript
-$scope.markdownHtml = $sce.trustAsHtml(new Showdown.converter().makeHtml(md);
+$scope.markdownHtml = $sce.trustAsHtml(new Showdown.converter().makeHtml(md)
 ```
 
 A few important points in this code sample.

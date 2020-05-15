@@ -18,7 +18,7 @@ const Career = (): React.ReactElement => {
       </p>
       <b>Languages</b>: Java, Kotlin, JavaScript, TypeScript
       <br />
-      <b>Technologies</b>: Spring, Jersey, React, Node.js, Express, Restify
+      <b>Technologies</b>: Spring, Jersey, React, Node.js, express, restify
       <h1 className="mt-8">Past</h1>
       <h2>Head to Head, Inc.</h2>
       <h3>Founding Engineer</h3>
@@ -30,13 +30,13 @@ const Career = (): React.ReactElement => {
       </p>
       <b>Languages</b>: JavaScript, Objective-C, Java
       <br />
-      <b>Technologies</b>: Android, iOS, React, Node.js, Express
+      <b>Technologies</b>: Android, iOS, React, Node.js, express
       <h2 className="mt-6">Vail Systems</h2>
       <h3>Software Engineer</h3>
       <p>
-        Vail Systems is a long standing company that specializes in VoIP and Call Routing. My primary role evolved
-        into full-stack web development with AngularJS and Ruby. I also found myself building VoiceXML applications,
-        using Java to write WebSocket servers, and writing websites with Ruby on Rails.
+        Vail Systems is a long standing company that specializes in VoIP and Call Routing. My primary role evolved into
+        full-stack web development with AngularJS and Ruby. I also found myself building VoiceXML applications, using
+        Java to write WebSocket servers, and writing websites with Ruby on Rails.
       </p>
       <b>Languages</b>: JavaScript, Ruby, Java
       <br />

@@ -1,6 +1,6 @@
 ---
-title: 'Start using ES6'
-date: '2015-05-12T00:00:00.000Z'
+title: "Start using ES6"
+date: "2015-05-12T00:00:00.000Z"
 ---
 
 # Start using ES6

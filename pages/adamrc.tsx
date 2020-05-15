@@ -9,7 +9,7 @@ const AdamRC = ({}: Props): React.ReactElement => {
       <ul>
         <li>
           <a href="https://github.com/be5invis/iosevka" target="_blank" rel="noopener noreferrer">
-            Iosevka Font
+            Iosevka
           </a>{" "}
           - By far my favorite font. Narrow to maximize screen real estate and still easy to read with optional
           ligatures.
@@ -17,7 +17,7 @@ const AdamRC = ({}: Props): React.ReactElement => {
 
         <li className="mt-4">
           <a href="https://github.com/morhetz/gruvbox" target="_blank" rel="noopener noreferrer">
-            Gruvbox (dark hard)
+            Gruvbox
           </a>{" "}
           - Pleasing color scheme with just enough contrast and color variation. Implementations available for a wide
           variety of applications. My favorite is specifically the <em>dark hard</em> variant.
@@ -25,11 +25,11 @@ const AdamRC = ({}: Props): React.ReactElement => {
 
         <li className="mt-4">
           <a href="https://www.jetbrains.com/" target="_blank" rel="noopener noreferrer">
-            WebStorm (or any JetBrains IDE)
+            WebStorm
           </a>{" "}
-          - I&apos;ve cycled through a lot of different editors and IDEs (Visual Studio, Vim, Emacs, Atom, VSCode) and I
-          find nothing beats JetBrains when it comes to developer experience. Paired with IdeaVim and a few other
-          amazing plugins it allows for unmatched productivity.
+          - All of JetBrain&apos;s offerings are amazing. I&apos;ve cycled through a lot of different editors and IDEs
+          (Visual Studio, Vim, Emacs, Atom, VSCode) and I find nothing beats JetBrains when it comes to developer
+          experience. Paired with IdeaVim it allows for unmatched productivity.
         </li>
 
         <li className="mt-4">
@@ -41,7 +41,7 @@ const AdamRC = ({}: Props): React.ReactElement => {
             .ideavimrc
           </a>{" "}
           - My custom configuration for IdeaVim. Enables all of the emulated plugins (surround, multiple cursors,
-          easymotion are the most important) and some niceities such as using clipboard as default register, global
+          easymotion are the most important) and some niceties such as using clipboard as default register, global
           replace by default, showing relative line numbers in the gutter, and preserving current mode when performing
           IDE refactoring.
         </li>
@@ -71,9 +71,13 @@ const AdamRC = ({}: Props): React.ReactElement => {
       </ul>
       <br />
       <p>
-        This website is built using{" "}
+        This website is built with{" "}
         <a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer">
           Next.js
+        </a>{" "}
+        using{" "}
+        <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">
+          TypeScript
         </a>{" "}
         and{" "}
         <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">

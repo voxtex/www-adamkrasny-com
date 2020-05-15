@@ -1,6 +1,6 @@
 ---
-title: 'Debugging AngularJS'
-date: '2015-10-12T00:00:00.000Z'
+title: "Debugging AngularJS"
+date: "2015-10-12T00:00:00.000Z"
 ---
 
 # Debugging AngularJS
@@ -28,7 +28,7 @@ controller(name)
 Will retrieve the controller being used on this element. If no name is provided, it will be the controller specified by ngController, otherwise you can also retrieve a directive specific controller, such as ngModel.
 
 ```javascript
-scope() 
+scope()
 ```
 
 Retrieve the scope of the current element.
@@ -43,7 +43,7 @@ can be useful.
 Let’s say you wanted to find the scope of an element with id ‘action-container’. Type something like this into the console.
 
 ```javascript
-angular.element('#action-container').scope();
+angular.element("#action-container").scope()
 ```
 
 All of this stuff is great to know, but really I would recommend just downloading this Chrome extension

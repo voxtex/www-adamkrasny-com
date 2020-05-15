@@ -1,6 +1,6 @@
 ---
-title: 'AngularJS: Simple, reusable directives'
-date: '2014-04-24T00:00:00.000Z'
+title: "AngularJS: Simple, reusable directives"
+date: "2014-04-24T00:00:00.000Z"
 ---
 
 # AngularJS: Simple, reusable directives
@@ -10,36 +10,39 @@ Directives in Angular give you the power to do a lot. Sometimes, you need to do 
 First, a directive that can be applied to a button group. Keep in mind this isn’t restricted to a button group, and if you think creatively, it can come be applied in a lot of places.
 
 ```javascript
-  mod.directive('radioValue', function () {
-    return {
-      restrict: 'A',
-      require: '^ngModel',
-      scope: {
-        radioValue: '='
-      },
-      link: function (scope, elem, attrs, ngModelCtrl) {
-        elem.on('click', function () {
-          scope.$apply(function () {
-            ngModelCtrl.$setViewValue(scope.radioValue);
-          });
+mod.directive("radioValue", function () {
+  return {
+    restrict: "A",
+    require: "^ngModel",
+    scope: {
+      radioValue: "=",
+    },
+    link: function (scope, elem, attrs, ngModelCtrl) {
+      elem.on("click", function () {
+        scope.$apply(function () {
+          ngModelCtrl.$setViewValue(scope.radioValue);
         });
-        scope.$watch(function() {
+      });
+      scope.$watch(
+        function () {
           return ngModelCtrl.$modelValue;
-        }, function(newVal) {
-          elem.toggleClass('selected', newVal === scope.radioValue);
-        });
-      }
-    };
-  });
+        },
+        function (newVal) {
+          elem.toggleClass("selected", newVal === scope.radioValue);
+        },
+      );
+    },
+  };
+});
 ```
 
 Not impressed? You don’t have to be. Keep it simple. Here’s an example of how this directive would be used.
 
 ```javascript
-<div class="'btn-group' ng-model='ctrl.animal'>
+<div class='btn-group' ng-model='ctrl.animal'>
     <div class='btn' radio-value='"Dog"'>Dog</div>
-    <div class="'btn' radio-value='"Cat"'>Cat</div>
-    <div class="'btn' radio-value='"Pig"'>Pig</div>
+    <div class='btn' radio-value='"Cat"'>Cat</div>
+    <div class='btn' radio-value='"Pig"'>Pig</div>
 </div>
 ```
 
@@ -50,20 +53,20 @@ The beauty of the directive, to me, is that we take advantage of an existing con
 Here’s one more simple directive and how it can be used. It’s actually quite similar.
 
 ```javascript
-app.directive('setValueOnClick', function () {
+app.directive("setValueOnClick", function () {
   return {
-    restrict: 'A',
-    require: '^ngModel',
+    restrict: "A",
+    require: "^ngModel",
     scope: {
-      setValueOnClick: '='
+      setValueOnClick: "=",
     },
     link: function (scope, elem, attrs, ngModelCtrl) {
-      elem.on('click', function () {
+      elem.on("click", function () {
         scope.$apply(function () {
           ngModelCtrl.$setViewValue(scope.setValueOnClick);
         });
       });
-    }
+    },
   };
 });
 ```
@@ -71,9 +74,9 @@ app.directive('setValueOnClick', function () {
 And it’s usage
 
 ```javascript
-<div ng-controller=""Controller as ctrl">
-    <div ng-model="'ctrl.number'>
-    <div class='number' ng-repeat='num in ctrl.numbers' set-value-on-click='num'>{{num}}</div>
+<div ng-controller="Controller as ctrl">
+    <div ng-model="ctrl.number">
+    <div class="number" ng-repeat="num in ctrl.numbers" set-value-on-click="num">{{num}}</div>
     </div>
     <h2>{{ctrl.number}}</h2>
 </div>

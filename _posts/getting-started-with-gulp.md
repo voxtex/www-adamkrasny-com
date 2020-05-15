@@ -1,6 +1,6 @@
 ---
-title: 'Getting started with Gulp'
-date: '2014-04-12T00:00:00.000Z'
+title: "Getting started with Gulp"
+date: "2014-04-12T00:00:00.000Z"
 ---
 
 # Getting started with Gulp
@@ -26,7 +26,7 @@ Install the following gulp plugins using npm `npm install --save-dev <plugin>`
 [gulp-open](https://github.com/stevelacy/gulp-open) - Open browser automatically.  
 [gulp-plumber](https://github.com/floatdrop/gulp-plumber) - Monkey patch to fix stream piping being stopped by errors. Useful for development.  
 [run-sequence](https://github.com/OverZealous/run-sequence) - As of today, this functionality still doesn’t seem to be implemented in gulp. Check out https://github.com/orchestrator/orchestrator/issues/21 for more information.  
-[lodash](http://lodash.com/) - Some utility functions. Also an awesome library.  
+[lodash](http://lodash.com/) - Some utility functions. Also an awesome library.
 
 ## File structure
 
@@ -47,9 +47,9 @@ package.json
 ## Gulpfile
 
 ```javascript
-var gulp = require('gulp'),
-lp = require('gulp-load-plugins')(), // automatically load our plugins
-_ = require('lodash');
+var gulp = require("gulp"),
+  lp = require("gulp-load-plugins")(), // automatically load our plugins
+  _ = require("lodash");
 ```
 
 Start by requiring the plugins and modules we need. gulp-load-plugins will load plugins and return an object that contains them. For example, gulp-changed will be assigned to `lp.changed`, the ‘gulp-’ prefix is removed automatically.
@@ -58,14 +58,14 @@ Start by requiring the plugins and modules we need. gulp-load-plugins will load 
 
 ```javascript
 function join(p1, p2) {
-  if(_.isArray(p2)) {
+  if (_.isArray(p2)) {
     return _.map(p2, _.partial(join, p1));
   }
-  return path.join(p1, p2 || '');
+  return path.join(p1, p2 || "");
 }
 
-var appPath = _.partial(join, 'app');
-var buildPath = _.partial(join, 'build');
+var appPath = _.partial(join, "app");
+var buildPath = _.partial(join, "build");
 ```
 
 I like to write some helper functions for easy path creation. Take advantage of the path module in node, along with lodash’s ability to partially apply functions. join is now a function that takes a path, p1, and can join it with either an array of paths (in which case it will be mapped to each one) or a single path.
@@ -104,43 +104,44 @@ You may notice srcScripts seems unnecessarily complex. This is just to process f
 ## Build tasks
 
 ```javascript
-gulp.task('styles', function () {
-  return gulp.src(config.srcStyles)
-      .pipe(lp.plumber())
-      .pipe(lp.changed(config.destStyles))
-      .pipe(gulp.dest(config.destStyles))
-      .pipe(lp.connect.reload());
+gulp.task("styles", function () {
+  return gulp
+    .src(config.srcStyles)
+    .pipe(lp.plumber())
+    .pipe(lp.changed(config.destStyles))
+    .pipe(gulp.dest(config.destStyles))
+    .pipe(lp.connect.reload());
 });
 
-gulp.task('scripts', function () {
-  return gulp.src(config.srcScripts)
-      .pipe(lp.plumber())
-      .pipe(lp.changed(config.destScripts))
-      .pipe(gulp.dest(config.destScripts))
-      .pipe(lp.connect.reload());
+gulp.task("scripts", function () {
+  return gulp
+    .src(config.srcScripts)
+    .pipe(lp.plumber())
+    .pipe(lp.changed(config.destScripts))
+    .pipe(gulp.dest(config.destScripts))
+    .pipe(lp.connect.reload());
 });
 
-gulp.task('images', function () {
-  return gulp.src(config.srcImages)
-      .pipe(lp.plumber())
-      .pipe(lp.changed(config.destImages))
-      .pipe(gulp.dest(config.destImages))
-      .pipe(lp.connect.reload());
+gulp.task("images", function () {
+  return gulp
+    .src(config.srcImages)
+    .pipe(lp.plumber())
+    .pipe(lp.changed(config.destImages))
+    .pipe(gulp.dest(config.destImages))
+    .pipe(lp.connect.reload());
 });
 
-gulp.task('views', function () {
-  return gulp.src(config.srcViews)
-      .pipe(lp.plumber())
-      .pipe(lp.changed(config.destViews))
-      .pipe(gulp.dest(config.destViews))
-      .pipe(lp.connect.reload());
+gulp.task("views", function () {
+  return gulp
+    .src(config.srcViews)
+    .pipe(lp.plumber())
+    .pipe(lp.changed(config.destViews))
+    .pipe(gulp.dest(config.destViews))
+    .pipe(lp.connect.reload());
 });
 
-gulp.task('index', ['styles', 'scripts'], function () {
-  return gulp.src(config.srcIndex)
-      .pipe(lp.plumber())
-      .pipe(gulp.dest(buildPath()))
-      .pipe(lp.connect.reload());
+gulp.task("index", ["styles", "scripts"], function () {
+  return gulp.src(config.srcIndex).pipe(lp.plumber()).pipe(gulp.dest(buildPath())).pipe(lp.connect.reload());
 });
 ```
 
@@ -158,9 +159,8 @@ The live-reload feature of [gulp-connect](https://github.com/avevlad/gulp-connec
 ## Cleanup
 
 ```javascript
-gulp.task('clean', function () {
-  return gulp.src(buildPath(), {read: false})
-      .pipe(lp.clean())
+gulp.task("clean", function () {
+  return gulp.src(buildPath(), { read: false }).pipe(lp.clean());
 });
 ```
 
@@ -169,12 +169,12 @@ gulp-clean will delete our ‘build/’ directory. By passing {read: false} to `
 ## Watching for changes
 
 ```javascript
-gulp.task('watch', function () {
-  gulp.watch(config.srcStyles, ['styles']);
-  gulp.watch(config.srcViews, ['views']);
-  gulp.watch(config.srcImages, ['images']);
-  gulp.watch(config.srcScripts, ['scripts']);
-  gulp.watch(config.srcIndex, ['index']);
+gulp.task("watch", function () {
+  gulp.watch(config.srcStyles, ["styles"]);
+  gulp.watch(config.srcViews, ["views"]);
+  gulp.watch(config.srcImages, ["images"]);
+  gulp.watch(config.srcScripts, ["scripts"]);
+  gulp.watch(config.srcIndex, ["index"]);
 });
 ```
 
@@ -183,8 +183,8 @@ watch is built into gulp. It will monitor files for changes, and execute one or 
 ## Building
 
 ```javascript
-gulp.task('build', ['clean'], function (cb) {
-  runSequence(['index', 'images', 'views'], cb);
+gulp.task("build", ["clean"], function (cb) {
+  runSequence(["index", "images", "views"], cb);
 });
 ```
 
@@ -193,11 +193,11 @@ build is a collection of tasks. First it will run ‘clean’, then it will run 
 ## Starting a server
 
 ```javascript
-gulp.task('server', function () {
+gulp.task("server", function () {
   lp.connect.server({
     root: buildPath(),
     port: config.httpPort,
-    livereload: true
+    livereload: true,
   });
 });
 ```
@@ -207,8 +207,8 @@ server will start up the [gulp-connect](https://github.com/torifat/gulp-connect-
 ## Wrapping it all up
 
 ```javascript
-gulp.task('default', ['build'], function (cb) {
-  runSequence('server', 'watch', cb);
+gulp.task("default", ["build"], function (cb) {
+  runSequence("server", "watch", cb);
 });
 ```
 

@@ -34,7 +34,7 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
       <nav className="bg-black bg-opacity-75 px-4 text-white text-center pb-0 md:text-left md:px-6 md:bg-opacity-50">
         <Link href="/">
           <a
-            className="inline-block px-4 mt-6 text-white hover:text-white hover:text-opacity-75 md:block md:px-0"
+            className="inline-block px-4 mt-3 text-white hover:text-white hover:text-opacity-75 md:block md:px-0 md:mt-6"
             ref={registerAnchorElement}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}

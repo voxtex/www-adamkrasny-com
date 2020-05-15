@@ -1,11 +1,11 @@
 ---
-title: 'Isolate Scope Helpers'
-date: '2013-09-10T00:00:00.000Z'
+title: "Isolate Scope Helpers"
+date: "2013-09-10T00:00:00.000Z"
 ---
 
 # Isolate Scope Helpers
 
-*Author’s note - This has changed in Angular 1.2. Directives with isolated scopes will only share this isolated scope with other directives that explicitly request it. It will no longer impact regular directives.*
+_Author’s note - This has changed in Angular 1.2. Directives with isolated scopes will only share this isolated scope with other directives that explicitly request it. It will no longer impact regular directives._
 
 Isolate scope is a concept which can be really useful. If a directive ever needs to create or manipulate it’s own variables that it will use in a template, you want it to have an isolated scope. Also the ‘@’, ‘&’, and ‘=’ shortcuts seem like they could be really easy shortcuts to reading attributes into a directive. Knowing all of this, I still find myself rarely using them and I’ll tell you why.
 
@@ -18,15 +18,15 @@ Isolated scopes inside of directives do NOT prototypically inherit from parent s
 Why is this important? Let’s say we’re creating a tooltip directive that wants to grab the contents of its own interpolated attribute to display inside of the tooltip. Ignore which tooltip library we might use and just assume it’s a simple method call. This kind of directive might be defined like so:
 
 ```javascript
-app.directive('tooltip', function() {
+app.directive("tooltip", function () {
   return {
     scope: {
-      tooltip: '@'
+      tooltip: "@",
     },
-    link: function(scope, elem, attrs) {
+    link: function (scope, elem, attrs) {
       elem.tooltip(scope.tooltip);
-    }
-  }
+    },
+  };
 });
 ```
 
@@ -67,14 +67,14 @@ attrs.$observe() // watches an attribute which contains an interpolated value, p
 We can rewrite the directive without isolate scope
 
 ```javascript
-app.directive('tooltip', function() {
+app.directive("tooltip", function () {
   return {
-    link: function(scope, elem, attrs) {
-      attrs.$observe('tooltip', function(val) {
+    link: function (scope, elem, attrs) {
+      attrs.$observe("tooltip", function (val) {
         elem.tooltip(val);
       });
-    }
-  }
+    },
+  };
 });
 ```
 

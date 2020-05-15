@@ -1,6 +1,6 @@
 ---
-title: 'Angular and Slim'
-date: '2013-12-10T00:00:00.000Z'
+title: "Angular and Slim"
+date: "2013-12-10T00:00:00.000Z"
 ---
 
 # Angular and Slim
