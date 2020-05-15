@@ -14,7 +14,18 @@ const Post = ({ post }: Props): React.ReactElement => {
     return <Error statusCode={404} />;
   }
 
-  return <div dangerouslySetInnerHTML={{ __html: post.content }} />;
+  return (
+    <div>
+      <div className="post" dangerouslySetInnerHTML={{ __html: post.content }} />
+      <style jsx>
+        {`
+          .post > :global(h1:first-child) {
+            margin-top: 0;
+          }
+        `}
+      </style>
+    </div>
+  );
 };
 
 export default Post;
