@@ -2,8 +2,16 @@
 
 /* Write your own custom base styles here */
 body {
-  @apply font-serif bg-cover;
+  @apply font-serif;
+  background-color: #1E1E20;
   background-image: url("/assets/background_optimized.jpg");
+  background-size: 100%;
+}
+
+@screen md {
+  body {
+    @apply bg-cover;
+  }
 }
 
 h1,
