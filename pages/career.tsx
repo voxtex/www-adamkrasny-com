@@ -34,7 +34,7 @@ const Career = (): React.ReactElement => {
       <h2 className="mt-6">Vail Systems</h2>
       <h3>Software Engineer</h3>
       <p>
-        Vail Systems is a longer standing company that specializes in VoIP and Call Routing. My primary role evolved
+        Vail Systems is a long standing company that specializes in VoIP and Call Routing. My primary role evolved
         into full-stack web development with AngularJS and Ruby. I also found myself building VoiceXML applications,
         using Java to write WebSocket servers, and writing websites with Ruby on Rails.
       </p>
