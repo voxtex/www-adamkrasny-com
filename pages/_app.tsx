@@ -26,7 +26,7 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta charSet="utf-8" />
       </Head>
-      <nav className="bg-black bg-opacity-50 px-4 text-white text-center pb-0 md:text-left md:px-6">
+      <nav className="bg-black bg-opacity-75 px-4 text-white text-center pb-0 md:text-left md:px-6 md:bg-opacity-50">
         <Link href="/">
           <a
             className="inline-block px-4 mt-6 text-white hover:text-white hover:text-opacity-75 md:block md:px-0"
@@ -73,7 +73,7 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
       </nav>
       <div
         id="contact-buttons"
-        className="contact-buttons bg-black bg-opacity-50 flex justify-end items-center p-2 border-t px-4 md:px-6 md:justify-start"
+        className="contact-buttons bg-black bg-opacity-75 flex justify-end items-center p-2 border-t px-4 md:px-6 md:justify-start md:bg-opacity-50"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
