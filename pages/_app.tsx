@@ -97,6 +97,12 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
 
       <style jsx>
         {`
+          :global(:root) {
+            --side-bar-width: 340px;
+            --contact-buttons-height: calc(51px + 1rem);
+            --side-nav-indicator-width: 24px;
+          }
+
           .root {
             display: grid;
             grid:
@@ -134,8 +140,31 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
             .root {
               grid:
                 "side-nav side-nav-indicator content" 1fr
-                "contact-buttons side-nav-indicator content" auto
-                / 340px 30px minmax(0, 1fr);
+                "contact-buttons side-nav-indicator content" var(--contact-buttons-height)
+                / var(--side-bar-width) var(--side-nav-indicator-width) minmax(0, 1024px);
+            }
+
+            nav {
+              position: fixed;
+              top: 0;
+              bottom: var(--contact-buttons-height);
+              left: 0;
+              width: var(--side-bar-width);
+            }
+
+            .side-nav-indicator-holder {
+              position: fixed;
+              top: 0;
+              bottom: 0;
+              left: var(--side-bar-width);
+              width: var(--side-nav-indicator-width);
+            }
+
+            .contact-buttons {
+              position: fixed;
+              bottom: 0;
+              left: 0;
+              width: var(--side-bar-width);
             }
 
             .nav-links li:hover {
@@ -144,11 +173,9 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
           }
 
           @media (min-width: 1024px) {
-            .root {
-              grid:
-                "side-nav side-nav-indicator content" 1fr
-                "contact-buttons side-nav-indicator content" auto
-                / 420px 30px minmax(0, 1024px);
+            :global(:root) {
+              --side-bar-width: 420px;
+              --side-nav-indicator-width: 30px;
             }
           }
         `}

@@ -62,7 +62,7 @@ const useSideNavIndicator = (): UseSideNavIndicatorResult => {
       indicatorClassName,
       width: boundingClientRect.width,
       x: boundingClientRect.x,
-      y: boundingClientRect.y + window.pageYOffset,
+      y: boundingClientRect.y,
     };
   }, [indicatedElement]);
 

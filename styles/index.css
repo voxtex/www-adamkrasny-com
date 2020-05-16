@@ -18,6 +18,8 @@ h6 {
   @apply font-sans;
 }
 
+
+/* smaller code font on mobile */
 code {
   @apply font-mono text-sm !important;
 }
