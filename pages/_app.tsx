@@ -20,7 +20,7 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
   const { handleMouseEnter, handleMouseLeave, indicatorProps, registerAnchorElement } = useSideNavIndicator();
 
   return (
-    <div className="root">
+    <div className="root min-h-screen text-black">
       <Head>
         <title>Adam Krasny</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -34,7 +34,7 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
       <nav className="bg-black bg-opacity-75 px-4 text-white text-center pb-0 md:text-left md:px-6 md:bg-opacity-50">
         <Link href="/">
           <a
-            className="inline-block px-4 mt-3 text-white hover:text-white hover:text-opacity-75 md:block md:px-0 md:mt-6"
+            className="inline-block px-4 mt-2 text-white hover:text-white hover:text-opacity-75 md:block md:px-0 md:mt-6"
             ref={registerAnchorElement}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -42,11 +42,11 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
             <h1 className="text-5xl">Adam Krasny</h1>
           </a>
         </Link>
-        <h2 className="text-xl mt-2 flex flex-wrap justify-center md:justify-start">
+        <h2 className="text-xl flex flex-wrap justify-center mt-0 md:mt-2 md:justify-start">
           <Rolodex items={ROLODEX_ITEMS} className="pr-2 text-right" />
           <div> in San Jose, CA</div>
         </h2>
-        <ul className="nav-links list-none font-sans flex justify-around mt-4 md:mt-16 md:block">
+        <ul className="nav-links list-none font-sans flex justify-around mt-2 md:mt-16 md:block">
           <li>
             <SideNavLink
               href="/career"
@@ -98,11 +98,10 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
       <style jsx>
         {`
           .root {
-            min-height: 100vh;
             display: grid;
             grid:
               "side-nav" auto
-              "side-nav-indicator" 30px
+              "side-nav-indicator" 24px
               "content" 1fr
               "contact-buttons" auto
               / minmax(0, 1fr);

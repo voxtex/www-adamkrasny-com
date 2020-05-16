@@ -24,7 +24,13 @@ h6 {
 }
 
 code {
-  @apply font-mono;
+  @apply font-mono text-sm !important;
+}
+
+@screen md {
+  code {
+    @apply text-base !important;
+  }
 }
 
 h1 {
