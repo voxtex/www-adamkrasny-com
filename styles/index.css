@@ -6,12 +6,7 @@ body {
   background-color: #1e1e20;
   background-image: url("/assets/background_optimized.jpg");
   background-size: 100%;
-}
-
-@screen md {
-  body {
-    @apply bg-cover;
-  }
+  background-attachment: fixed;
 }
 
 h1,
