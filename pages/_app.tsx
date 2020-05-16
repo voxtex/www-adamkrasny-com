@@ -20,7 +20,7 @@ const MyApp = ({ Component, pageProps }: Props): React.ReactElement => {
   const { handleMouseEnter, handleMouseLeave, indicatorProps, registerAnchorElement } = useSideNavIndicator();
 
   return (
-    <div className="root min-h-screen text-black">
+    <div className="root min-h-screen">
       <Head>
         <title>Adam Krasny</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
