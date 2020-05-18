@@ -1,6 +1,6 @@
 ---
 title: "AngularJS: Simple, reusable directives"
-date: "2014-04-24T00:00:00.000Z"
+date: "2014-04-24"
 ---
 
 # AngularJS: Simple, reusable directives

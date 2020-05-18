@@ -1,6 +1,6 @@
 ---
 title: "Start using ES6"
-date: "2015-05-12T00:00:00.000Z"
+date: "2015-05-12"
 ---
 
 # Start using ES6

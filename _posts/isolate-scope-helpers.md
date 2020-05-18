@@ -1,6 +1,6 @@
 ---
 title: "Isolate Scope Helpers"
-date: "2013-09-10T00:00:00.000Z"
+date: "2013-09-10"
 ---
 
 # Isolate Scope Helpers

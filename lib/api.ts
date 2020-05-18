@@ -7,6 +7,7 @@ import { Post } from "../types";
 type MatterData = {
   title: string;
   date: string;
+  draft?: boolean;
 };
 
 const postsDirectory = join(process.cwd(), "_posts");
@@ -17,7 +18,7 @@ export const getPostBySlug = (slug: string, includeContent = true): Post => {
   const realSlug = slug.replace(/\.md$/, "");
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
+  const { content, data } = matter(fileContents);
 
   return {
     ...(data as MatterData),
@@ -30,5 +31,6 @@ export const getAllPosts = (): Post[] => {
   const slugs = getPostSlugs();
   return slugs
     .map((slug) => getPostBySlug(slug, false))
+    .filter((post) => !post.draft)
     .sort((a, b) => parseISO(b.date).valueOf() - parseISO(a.date).valueOf());
 };

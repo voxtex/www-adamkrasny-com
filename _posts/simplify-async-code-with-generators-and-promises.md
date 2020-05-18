@@ -1,6 +1,6 @@
 ---
 title: "Simplify async code with generators and promises"
-date: "2015-05-13T00:00:00.000Z"
+date: "2015-05-13"
 ---
 
 # Simplify async code with generators and promises

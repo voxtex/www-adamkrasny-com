@@ -1,6 +1,6 @@
 ---
 title: "Angular and Slim"
-date: "2013-12-10T00:00:00.000Z"
+date: "2013-12-10"
 ---
 
 # Angular and Slim

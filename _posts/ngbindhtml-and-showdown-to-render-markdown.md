@@ -1,6 +1,6 @@
 ---
 title: "ngBindHtml and Showdown to render markdown"
-date: "2013-10-25T00:00:00.000Z"
+date: "2013-10-25"
 ---
 
 # ngBindHtml and Showdown to Render Markdown

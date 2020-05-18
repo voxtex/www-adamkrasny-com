@@ -1,6 +1,6 @@
 ---
 title: "$event, where does it come from?"
-date: "2013-09-29T00:00:00.000Z"
+date: "2013-09-29"
 ---
 
 # $event, where does it come from?
