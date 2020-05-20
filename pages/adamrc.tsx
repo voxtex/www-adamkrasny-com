@@ -47,15 +47,17 @@ const AdamRC = ({}: Props): React.ReactElement => {
         </li>
 
         <li className="mt-4">
+          <a href="https://github.com/microsoft/PowerToys" target="_blank" rel="noopener noreferrer">
+            PowerToys (Windows)
+          </a>{" "}
+          - Several utilities for Windows including window management (FancyZones) and an app launcher (PowerToys Run).
+        </li>
+
+        <li className="mt-4">
           <a href="https://www.alfredapp.com/" target="_blank" rel="noopener noreferrer">
             Alfred (OSX)
           </a>{" "}
-          or{" "}
-          <a href="https://keypirinha.com/" target="_blank" rel="noopener noreferrer">
-            KeyPirinha (Windows)
-          </a>{" "}
-          - Launchers to find apps, files, bookmarks, do quick math, search the web, and more. Great to have at your
-          fingertips
+          - Launcher to find apps, files, bookmarks, do quick math, search the web, and more.
         </li>
 
         <li className="mt-4">
