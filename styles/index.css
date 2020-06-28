@@ -1,3 +1,4 @@
+/*noinspection CssInvalidAtRule*/
 @tailwind base;
 
 /* Write your own custom base styles here */
@@ -24,6 +25,7 @@ code {
   @apply font-mono text-sm !important;
 }
 
+/*noinspection CssInvalidAtRule*/
 @screen md {
   code {
     @apply text-base !important;
@@ -47,7 +49,7 @@ p {
 }
 
 a {
-  @apply text-blue-500;
+  @apply text-blue-600;
 }
 
 a:hover {
@@ -55,12 +57,14 @@ a:hover {
 }
 
 /* Start purging... */
+/*noinspection CssInvalidAtRule*/
 @tailwind components;
 /* Stop purging. */
 
 /* Write you own custom component styles here */
 
 /* Start purging... */
+/*noinspection CssInvalidAtRule*/
 @tailwind utilities;
 /* Stop purging. */
 
